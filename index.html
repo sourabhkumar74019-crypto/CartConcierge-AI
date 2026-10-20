@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartConcierge AI - 24/7 E-commerce AI Concierge & Chatbot</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sunset: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .sunset-gradient {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        }
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 8px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-orange-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl hero-gradient flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-500/30">
+                    C
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-slate-900">CartConcierge <span class="text-orange-600">AI</span></span>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#features" class="hover:text-orange-600 transition">Features</a>
+                <a href="#demo" class="hover:text-orange-600 transition">Live Demo</a>
+                <a href="#integrations" class="hover:text-orange-600 transition">Integrations</a>
+                <a href="#pricing" class="hover:text-orange-600 transition">Pricing</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-3">
+                <div id="active-store-badge" class="hidden items-center space-x-2 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl text-xs font-bold text-emerald-700">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span id="linked-store-name">Linked Store</span>
+                </div>
+                <button onclick="openWizard()" class="px-5 py-2.5 rounded-xl hero-gradient text-white text-sm font-bold shadow-lg shadow-orange-500/25 hover:opacity-95 transition">
+                    Add to Shopify
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-orange-50 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-orange-100 px-6 py-4 space-y-3 shadow-lg">
+            <a href="#features" class="block text-sm font-semibold text-slate-600 hover:text-orange-600">Features</a>
+            <a href="#demo" class="block text-sm font-semibold text-slate-600 hover:text-orange-600">Live Demo</a>
+            <a href="#integrations" class="block text-sm font-semibold text-slate-600 hover:text-orange-600">Integrations</a>
+            <a href="#pricing" class="block text-sm font-semibold text-slate-600 hover:text-orange-600">Pricing</a>
+            <button onclick="openWizard()" class="block text-center w-full py-2.5 rounded-xl hero-gradient text-white text-sm font-bold shadow-md">Add to Shopify</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-32 overflow-hidden sunset-gradient">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 space-y-8">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-700 text-xs font-bold tracking-wide uppercase">
+                    <span class="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
+                    Serverless Groq AI Engine Active
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+                    Elevate Your Customer Experience with <span class="text-transparent bg-clip-text hero-gradient">24/7 AI-Powered Support.</span>
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Designed for Shopify Merchants: Reduce ticket volume, automate cart recovery, provide instant order status, and boost sales on complete autopilot.
+                </p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button onclick="openWizard()" class="px-8 py-4 rounded-xl hero-gradient text-white text-center font-bold shadow-xl shadow-orange-500/30 hover:scale-[1.02] transition">
+                        Install on Shopify (Free)
+                    </button>
+                    <a href="#demo" class="px-8 py-4 rounded-xl bg-white border border-slate-200 text-slate-700 text-center font-bold hover:bg-slate-50 transition">
+                        Try AI Sandbox ↓
+                    </a>
+                </div>
+                <div class="flex items-center space-x-6 text-sm text-slate-500 pt-2">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>No credit card required</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>1-click setup</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Mockup -->
+            <div class="lg:col-span-6 relative">
+                <div class="relative mx-auto max-w-lg bg-white rounded-2xl shadow-2xl border border-orange-100 p-6 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                        </div>
+                        <span id="hero-store-display" class="text-xs font-bold text-slate-400">store.myshopify.com/cart-concierge</span>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-4 space-y-3">
+                        <div class="flex justify-between items-center text-xs text-slate-500">
+                            <span>Active Visitors: 58</span>
+                            <span class="text-emerald-600 font-bold">● AI Concierge Active</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm text-sm">
+                            <p class="font-medium text-slate-800">"Where is my order #2045?"</p>
+                            <p class="text-xs text-orange-600 mt-1 font-semibold">AI Automated Response Sent ✓</p>
+                        </div>
+                    </div>
+                    <div class="pt-2 text-center">
+                        <p class="text-xs text-slate-500">Try testing the live AI widget right from your store preview below!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900">Everything Your Store Needs to Scale Support</h2>
+                <p class="text-slate-600">Built for high-volume e-commerce stores wanting instant automated resolution.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-orange-50/50 border border-orange-100 space-y-4 hover:shadow-lg transition">
+                    <div class="w-12 h-12 rounded-xl hero-gradient flex items-center justify-center text-white text-xl font-bold shadow-md">⚡</div>
+                    <h3 class="text-xl font-bold text-slate-900">Instant Order Status</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Customers can track shipping, delivery dates, and tracking links automatically without human intervention.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-orange-50/50 border border-orange-100 space-y-4 hover:shadow-lg transition">
+                    <div class="w-12 h-12 rounded-xl hero-gradient flex items-center justify-center text-white text-xl font-bold shadow-md">🎯</div>
+                    <h3 class="text-xl font-bold text-slate-900">Cart Recovery AI</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Engages abandoning visitors with personalized discounts and product recommendations in real-time.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-orange-50/50 border border-orange-100 space-y-4 hover:shadow-lg transition">
+                    <div class="w-12 h-12 rounded-xl hero-gradient flex items-center justify-center text-white text-xl font-bold shadow-md">💬</div>
+                    <h3 class="text-xl font-bold text-slate-900">Trained on Your Catalog</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Instantly syncs with your Shopify products, policies, and FAQs to answer precise questions accurately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Groq AI Widget Section -->
+    <section id="demo" class="py-20 sunset-gradient">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-2xl border border-orange-200 overflow-hidden">
+                <div class="hero-gradient p-6 text-white flex items-center justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold">CartConcierge Live Widget Sandbox</h3>
+                        <p class="text-xs text-orange-100">Test how your store customers will interact with the AI assistant.</p>
+                    </div>
+                    <div class="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold">Groq API Connected</div>
+                </div>
+
+                <!-- Chat Box Area -->
+                <div id="chat-container" class="h-96 overflow-y-auto p-6 space-y-4 bg-slate-50 custom-scroll">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full hero-gradient flex items-center justify-center text-white text-xs font-bold shadow-md">AI</div>
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 max-w-md text-sm text-slate-700">
+                            Hello! 👋 I'm your 24/7 E-commerce AI Concierge. Ask me anything about our store, shipping policy, or product recommendations!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="p-4 bg-white border-t border-slate-100 flex items-center space-x-3">
+                    <input type="text" id="user-input" placeholder="Type a message (e.g., What is your return policy?)..." class="flex-1 px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-orange-500">
+                    <button onclick="sendChatMessage()" class="px-6 py-3 hero-gradient text-white text-sm font-bold rounded-xl shadow-md hover:opacity-90 transition">
+                        Send
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="py-16 bg-slate-50 border-y border-orange-100">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-8">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">Seamless Integration With Top Platforms</h3>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80">
+                <span class="text-xl font-extrabold text-slate-800 tracking-tight">shopify</span>
+                <span class="text-xl font-extrabold text-slate-800 tracking-tight">woocommerce</span>
+                <span class="text-xl font-extrabold text-slate-800 tracking-tight">magento</span>
+                <span class="text-xl font-extrabold text-slate-800 tracking-tight">wix stores</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900">Simple, Transparent Pricing</h2>
+                <p class="text-slate-600">Start free, scale as your store grows.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="p-8 rounded-3xl border border-slate-200 bg-white space-y-6">
+                    <h3 class="text-xl font-bold text-slate-900">Starter Plan</h3>
+                    <div class="text-4xl font-extrabold text-slate-900">Free <span class="text-sm font-normal text-slate-500">/ forever</span></div>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-center space-x-2">✓ <span>Up to 100 AI chats/month</span></li>
+                        <li class="flex items-center space-x-2">✓ <span>Shopify basic integration</span></li>
+                        <li class="flex items-center space-x-2">✓ <span>Standard widget branding</span></li>
+                    </ul>
+                    <button onclick="openWizard()" class="block w-full text-center py-3 rounded-xl border border-orange-500 text-orange-600 font-bold hover:bg-orange-50 transition">Get Started</button>
+                </div>
+                <div class="p-8 rounded-3xl border-2 border-orange-500 bg-orange-50/30 space-y-6 relative shadow-xl">
+                    <span class="absolute -top-3 right-8 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
+                    <h3 class="text-xl font-bold text-slate-900">Pro Merchant</h3>
+                    <div class="text-4xl font-extrabold text-slate-900">$49 <span class="text-sm font-normal text-slate-500">/ month</span></div>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-center space-x-2">✓ <span>Unlimited AI customer chats</span></li>
+                        <li class="flex items-center space-x-2">✓ <span>Advanced Groq Serverless Engine</span></li>
+                        <li class="flex items-center space-x-2">✓ <span>Custom branding & colors</span></li>
+                    </ul>
+                    <button onclick="openWizard()" class="block w-full text-center py-3 rounded-xl hero-gradient text-white font-bold shadow-md hover:opacity-95 transition">Start 14-Day Trial</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Wizard Modal -->
+    <div id="wizard-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-orange-100 space-y-6 relative">
+            <button onclick="closeWizard()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 font-bold text-lg">✕</button>
+            <div class="space-y-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-orange-600">Step-by-Step Setup</span>
+                <h3 class="text-2xl font-extrabold text-slate-900">Install CartConcierge AI</h3>
+                <p class="text-sm text-slate-500">Connect your e-commerce store in less than 60 seconds.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Your Shopify Store URL</label>
+                    <input type="text" id="store-url" placeholder="my-store.myshopify.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-orange-500">
+                </div>
+                <div class="bg-orange-50 p-4 rounded-xl border border-orange-100 text-xs text-orange-800 space-y-1">
+                    <p class="font-bold">Embed Code Generated:</p>
+                    <code class="block bg-white p-2 rounded border border-orange-200 text-slate-700 overflow-x-auto">&lt;script src="https://cartconcierge.ai/widget.js" data-store="active" async&gt;&lt;/script&gt;</code>
+                </div>
+            </div>
+
+            <div class="flex space-x-3 pt-2">
+                <button onclick="closeWizard()" class="flex-1 py-3 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm hover:bg-slate-50 transition">Cancel</button>
+                <button onclick="completeInstallation()" class="flex-1 py-3 rounded-xl hero-gradient text-white font-bold text-sm shadow-md hover:opacity-95 transition">Finish Setup 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between">
+            <p class="text-sm text-slate-400">© 2026 CartConcierge AI Engine. All rights reserved.</p>
+            <div class="flex space-x-6 text-sm text-slate-400 mt-4 sm:mt-0">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optimized JavaScript Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Setup Wizard Modal Functions
+        function openWizard() {
+            document.getElementById('wizard-modal').classList.remove('hidden');
+            mobileMenu.classList.add('hidden');
+        }
+
+        function closeWizard() {
+            document.getElementById('wizard-modal').classList.add('hidden');
+        }
+
+        function completeInstallation() {
+            const storeUrl = document.getElementById('store-url').value.trim();
+            if(!storeUrl) {
+                alert('Please enter your store URL.');
+                return;
+            }
+
+            // Update UI with linked store
+            document.getElementById('linked-store-name').innerText = storeUrl;
+            document.getElementById('active-store-badge').classList.remove('hidden');
+            document.getElementById('active-store-badge').classList.add('flex');
+            document.getElementById('hero-store-display').innerText = storeUrl;
+
+            closeWizard();
+
+            // Smooth Scroll to Live Demo Sandbox
+            document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Enter Key Support for Chat Input
+        document.getElementById('user-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendChatMessage();
+            }
+        });
+
+        async function sendChatMessage() {
+            const inputField = document.getElementById('user-input');
+            const chatContainer = document.getElementById('chat-container');
+            const userText = inputField.value.trim();
+
+            if (!userText) return;
+
+            // Append User Message
+            chatContainer.innerHTML += `
+                <div class="flex items-end justify-end space-x-3">
+                    <div class="bg-orange-600 text-white p-4 rounded-2xl shadow-sm max-w-md text-sm">
+                        ${escapeHtml(userText)}
+                    </div>
+                </div>
+            `;
+            inputField.value = '';
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            // Append Typing Indicator
+            const loadingId = 'loading-' + Date.now();
+            chatContainer.innerHTML += `
+                <div id="${loadingId}" class="flex items-start space-x-3">
+                    <div class="w-8 h-8 rounded-full hero-gradient flex items-center justify-center text-white text-xs font-bold shadow-md">AI</div>
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 text-sm text-slate-400 animate-pulse">
+                        Thinking...
+                    </div>
+                </div>
+            `;
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            const fullPrompt = `You are CartConcierge AI, a polite, expert 24/7 E-commerce AI Support Assistant.
+Customer Question: ${userText}
+Provide a concise, helpful, and high-converting answer suited for online shoppers.`;
+
+            try {
+                // Secure Vercel Serverless Function Call
+                const response = await fetch('/api/groq', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: fullPrompt })
+                });
+
+                const data = await response.json();
+                document.getElementById(loadingId).remove();
+
+                const aiReply = (data.choices && data.choices[0]) 
+                    ? data.choices[0].message.content 
+                    : "I'm here to help you with your e-commerce store orders and inquiries!";
+
+                // Append AI Response
+                chatContainer.innerHTML += `
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full hero-gradient flex items-center justify-center text-white text-xs font-bold shadow-md">AI</div>
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 max-w-md text-sm text-slate-700 whitespace-pre-line">
+                            ${escapeHtml(aiReply)}
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                document.getElementById(loadingId).remove();
+                chatContainer.innerHTML += `
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full hero-gradient flex items-center justify-center text-white text-xs font-bold shadow-md">AI</div>
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-red-100 max-w-md text-sm text-red-600">
+                            Unable to connect to /api/groq endpoint. Please verify serverless deployment.
+                        </div>
+                    </div>
+                `;
+            }
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+    </script>
+</body>
+</html>
